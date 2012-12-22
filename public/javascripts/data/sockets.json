@@ -1,0 +1,26 @@
+[
+    {
+        "position": 0,
+        "name": "Coffee Machine",
+        "state": "ON",
+        "role": "neutral",
+        "timers": 0,
+        "oneshottimers": 0
+    },
+    {
+        "position": 1,
+        "name": "Refrigerator",
+        "state": "ON",
+        "role": "neutral",
+        "timers": 0,
+        "oneshottimers": 0
+    },
+    {
+        "position": 2,
+        "name": "Microwave",
+        "state": "OFF",
+        "role": "neutral",
+        "timers": 0,
+        "oneshottimers": 0
+    }
+]

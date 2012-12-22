@@ -1,0 +1,38 @@
+{
+    "mac": "00099A",
+    "utc": "1284641197",
+    "indentity": {
+        "release": "2.15",
+        "model": "UFO",
+        "name": "Office Kitchen"
+    },
+    "status": {
+        "state": "ONLINE",
+        "sockets": [
+            {
+                "position": 0,
+                "name": "Coffee Machine",
+                "state": "ON",
+                "role": "neutral",
+                "timers": 0,
+                "oneshottimers": 0
+            },
+            {
+                "position": 1,
+                "name": "Refrigerator",
+                "state": "ON",
+                "role": "neutral",
+                "timers": 0,
+                "oneshottimers": 0
+            },
+            {
+                "position": 2,
+                "name": "Microwave",
+                "state": "OFF",
+                "role": "neutral",
+                "timers": 0,
+                "oneshottimers": 0
+            }
+        ]
+    }
+}

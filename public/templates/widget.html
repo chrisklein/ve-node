@@ -1,0 +1,16 @@
+<h4><%= socket.get("name") %></h4>
+<hr>
+<p><strong>Status: </strong><%= socket.get("state") %></p>
+<div class="form-actions">
+  <% if (socket.get("state") === "ON") {%>
+  	<button type="button" class="btn btn-danger">
+  		<i class="icon-off icon-white"></i>
+  		Turn Off
+  	</button>
+  <%} else {%>
+  	<button type="button" class="btn btn-success">
+  		<i class="icon-off icon-white"></i>
+  		Turn On
+  	</button>
+  <% } %>
+</div>
