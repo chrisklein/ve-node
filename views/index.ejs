@@ -13,10 +13,27 @@
 
     <div class="container">
 
-      <div id="dashboard" class="row">
+      <div id="messages"></div>
 
+      <div id="apiToggle" class="btn-group" data-toggle="buttons-radio">
+        <button id="OURS" type="button" class="btn" disabled="disabled">Ours</button>
+        <button id="VISIBLE_ENGERY" type="button" class="btn active">Visible Energy</button>
+        <button id="SMART_THINGS" type="button" class="btn" disabled="disabled">Smart Things</button>
       </div>
-    	
+
+      <hr>
+
+      <ul class="nav nav-tabs">
+        <li><a href="#dashboard" data-toggle="tab">Dashboard</a></li>
+        <li><a href="#jobs" data-toggle="tab">Jobs</a></li>
+      </ul>
+
+      <div class="tab-content">  
+        <div class="tab-pane" id="dashboard">
+          <div class="row" id="widgets"></div>
+        </div>
+        <div class="tab-pane" id="jobs">Test</div>
+      </div>
 
     	<% include layout/footer.ejs %>
 

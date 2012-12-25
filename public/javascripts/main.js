@@ -1,7 +1,13 @@
-define(["namespace", "views/dashboard", "collections/sockets", "services/data.binder"]
-, function(ve, dashboardView, socketsCollection, dataBinder){
+define(["namespace", "views/dashboard", "views/apiToggle", "collections/sockets", "services/data.binder"]
+, function(ve, dashboardView, toggleView, socketsCollection, dataBinder){
 	
 	var initialize = function(){
+		// API Toggle
+		ve.views.toggle = new toggleView();
+
+		// Set active Tab
+		$('.nav-tabs a:first').tab('show');
+
 		// Extend Backben.Event to be used as our global dispatcher
 		ve.dispatcher = _.clone(Backbone.Events)
 

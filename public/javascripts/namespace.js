@@ -16,5 +16,11 @@ define([]
 
       var dispatcher = ve.dispatcher = {}
 
+      var api = ve.api = ""
+
+      var constants = ve.constants = {
+      	"apis": ["OURS", "VISIBLE_ENGERY", "SMART_THINGS"]
+      }
+
       return ve;
 });

@@ -2,7 +2,7 @@ define(["services/data.binder", "views/widget"]
 , function(dataBinder, widget){
 
 	return Backbone.View.extend({
-		el: "#dashboard",
+		el: "#widgets",
 		initialize: function(){
 			this.subscriptions()
 		},
