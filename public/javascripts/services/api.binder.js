@@ -6,7 +6,7 @@ define(["namespace"]
 	}
 
 	var unsubscribeControls = function(channel, callback){
-		ve.dispatcher.off(channel);
+		ve.dispatcher.off(channel, callback);
 	}
 
 	var publishControls = function(channel){

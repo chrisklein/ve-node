@@ -53,24 +53,34 @@ define(["namespace", "services/api.binder"]
 		},
 
 		subscribe: function(apiType){
-			api = _.find(ve.config.apis, function(a){ return a.name === apiType })
+			var api = _.find(ve.config.apis, function(a){ return a.name === apiType })
 			if(!_.isUndefined(api) && !_.isNull(api.servicePath)){
-				curl([api.servicePath], function(mod) {
-				  apiBinder.subscribe("on", mod.on)
-				  apiBinder.subscribe("off", mod.off)
-				});
+				curl([api.servicePath]).then(
+					function(mod) {
+				  		apiBinder.subscribe("on", mod.on)
+				  		apiBinder.subscribe("off", mod.off)
+					},
+					function(e){
+						console.log(e);
+					}
+				);
 			}else{
 				console.log("Api = "+apiType+" does not have an implementation yet")
 			}
 		},
 
 		unsubscribe: function(apiType){
-			api = _.find(ve.config.apis, function(a){ return a.name === apiType })
+			var api = _.find(ve.config.apis, function(a){ return a.name === apiType })
 			if(!_.isUndefined(api) && !_.isNull(api.servicePath)){
-				curl([api.servicePath], function(mod) {
-				  apiBinder.unsubscribe("on", mod.on)
-				  apiBinder.unsubscribe("off", mod.off)
-				});
+				curl([api.servicePath]).then(
+					function(mod) {
+				  		apiBinder.unsubscribe("on", mod.on)
+				  		apiBinder.unsubscribe("off", mod.off)
+					},
+					function(e){
+						console.log(e);
+					}
+				);
 			}else{
 				console.log("Api = "+apiType+" does not have an implementation yet")
 			}
