@@ -20,7 +20,10 @@ define(["namespace", "services/api.binder"]
 		},
 
 		change: function(e){
-			$(e.currentTarget).hasClass("active") ? this.removeApi(e.target.id) : this.setApi(e.target.id);
+			if(!$(e.currentTarget).hasClass("active")){
+				this.setApi(e.target.id);
+				this.removeApi(this.$el.find(".active").attr("id"));
+			}
 		},
 
 		setApi: function(apiType){
