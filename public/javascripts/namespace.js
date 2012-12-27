@@ -16,10 +16,14 @@ define([]
 
       var dispatcher = ve.dispatcher = {}
 
-      var api = ve.api = ""
+      var api = ve.apis = []
 
-      var constants = ve.constants = {
-      	"apis": ["OURS", "VISIBLE_ENGERY", "SMART_THINGS"]
+      var config = ve.config = {
+      	"apis": [
+      		{ name: "OURS", implemented: false, servicePath: null },
+      		{ name: "VISIBLE_ENERGY", implemented: true, servicePath: "services/controlsVeImpl" },
+      		{ name: "SMART_THINGS", implemented: false, servicePath: null }
+      	]
       }
 
       return ve;

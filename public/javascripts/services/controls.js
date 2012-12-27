@@ -2,13 +2,11 @@ define(["namespace"]
 , function(ve){
 
 	var on = function(deviceId){
-		var socket = ve.collections.sockets.get(deviceId)
-		socket.set("state", "ON")
+		ve.dispatcher.trigger("on", deviceId)
 	}
 
 	var off = function(deviceId){
-		var socket = ve.collections.sockets.get(deviceId)
-		socket.set("state", "OFF")
+		ve.dispatcher.trigger("off", deviceId)
 	}
 
 	return {
