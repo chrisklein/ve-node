@@ -1,25 +1,10 @@
-var deviceOrigins = [
-	{
-		id: 1,
-		vendor: "BELKIN",
-		type: "WEMO",
-	},
-	{
-		id: 2,
-		vendor: "VISIBLE_ENERGY",
-		type: "MONOSTRIP"
-	},
-	{
-		id: 3,
-		vendor: "SMART_THINGS",
-		type: "SWITCH"
-	}
-]
+var _ = require('underscore')
+	, deviceOrigins = require('../data/deviceOrigins')
 
-var index = function(){
-	return deviceOrigins;
+exports.index = function(){
+	return deviceOrigins.index();
 }
 
-module.exports = {
-	index:  index()
+exports.getById = function(id){
+	return _.find(deviceOrigins.index(), function(o){ return o.id == id });
 }

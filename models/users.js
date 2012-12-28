@@ -1,35 +1,16 @@
-var users = [
-	{	
-		id: 11,
-		username: "jimjack",
-		password: "password",
-		fullName: "Jimmy Jack II",
-		email: "jimjack@crackerjack.com",
-		salt: "salty"
-	},
-	{	
-		id: 22,
-		username: "billbob",
-		password: "password",
-		fullName: "Billy Bob",
-		email: "billbob@yojob.com",
-		salt: "salty"
-	},
-	{	
-		id: 33,
-		username: "rhondaray",
-		password: "password",
-		fullName: "Rhonda Ray",
-		email: "rhondaray@eatsomehey.com",
-		salt: "salty"
-	}
-	
-]
+var users = require('../data/users')
+	, deviceOrigins = require('./deviceOrigins')
+	, devices = require('./devices')
+	, _ = require('underscore');
 
-var index = function(){
-	return users;
+exports.index = function(fk){
+	var obj = users.index();
+	_.each(obj, function(o){
+		o.devices = devices.filterByUserId(o.id);
+	})
+	return obj;
 }
 
-module.exports = {
-	index: index()
+exports.getById = function(id){
+	return _.find(users.index(), function(user){ return user.id == id });
 }
