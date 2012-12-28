@@ -7,9 +7,9 @@ exports.index = function(fk){
 	var obj = devices.index();
 	_.each(obj, function(o){
 		o.user = users.getById(o.userId);
-		!fk && delete o.userId;
-		o.deviceOrign = deviceOrigins.getById(o.deviceOrignId);
-		!fk && delete o.deviceOrignId;
+		//!fk && delete o.userId;
+		o.deviceOrigin = deviceOrigins.getById(o.deviceOriginId);
+		//!fk && delete o.deviceOriginId;
 	})
 	return obj;
 }

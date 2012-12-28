@@ -5,7 +5,7 @@ var devices = [
 		status: "ON",
 		pin: "100",
 		userId: 11,
-		deviceOrignId: 2
+		deviceOriginId: 2
 	},
 	{
 		id: 2,
@@ -13,7 +13,7 @@ var devices = [
 		status: "ON",
 		pin: "100",
 		userId: 11,
-		deviceOrignId: 2
+		deviceOriginId: 2
 	},
 	{
 		id: 3,
@@ -21,7 +21,7 @@ var devices = [
 		status: "OFF",
 		pin: "100",
 		userId: 11,
-		deviceOrignId: 2
+		deviceOriginId: 2
 	}
 
 ]
