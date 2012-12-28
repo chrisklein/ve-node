@@ -1,12 +1,3 @@
-
-exports.index = function(req, res){
-  res.send(users);
-};
-
-exports.show = function(req, res){
-	res.send(users[req.params.id] || {error: 'User cannot be found'});
-}
-
 var users = [
 	{	
 		id: 11,
@@ -34,3 +25,11 @@ var users = [
 	}
 	
 ]
+
+var index = function(){
+	return users;
+}
+
+module.exports = {
+	index: index()
+}
