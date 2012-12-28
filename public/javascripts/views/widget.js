@@ -11,7 +11,7 @@ define(["services/data.binder", "services/controls", "text!templates/widget.html
 		},
 
 		subscriptions: function(){
-			this.listenTo(this.model, 'change:state', this.render);
+			this.listenTo(this.model, 'change:status', this.render);
 		},
 
 		events: {

@@ -1,0 +1,38 @@
+[
+	{
+		"title": "Coffee Machine",
+		"input": [
+			{
+				"name": "switch1",
+				"title": "Switch 1 in kitchen",
+				"type": "device.switch",
+				"description": "Click to switch",
+				"multiple": false
+			}
+		]
+	},
+	{
+		"title": "Refrigerator",
+		"input": [
+			{
+				"name": "switch2",
+				"title": "Switch 2 in kitchen",
+				"type": "device.switch",
+				"description": "Click to switch",
+				"multiple": false
+			}
+		]
+	},
+	{
+		"title": "Microwave",
+		"input": [
+			{
+				"name": "switch3",
+				"title": "Switch 3 in kitchen",
+				"type": "device.switch",
+				"description": "Click to switch",
+				"multiple": false
+			}
+		]
+	}
+]

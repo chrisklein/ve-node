@@ -1,6 +1,6 @@
-define(["services/data.binder"]
-, function(dataBinder){
+define([]
+, function(){
 	return Backbone.Collection.extend({
-		url: "javascripts/data/sockets.json"
+		url: "devices"
 	})
 });
