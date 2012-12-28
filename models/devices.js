@@ -1,6 +1,7 @@
 var devices = require('../data/devices')
  	, users = require('./users')
  	, deviceOrigins = require('./deviceOrigins')
+ 	, tendrilDevices = require('../data/tendrilDevices')
  	, _ = require('underscore');
 
 exports.index = function(fk){
@@ -20,4 +21,8 @@ exports.getById = function(id, fk){
 
 exports.filterByUserId = function(userId, fk){
 	return _.filter(devices.index(), function(d){ return d.userId == userId })
+}
+
+exports.getTendrilDevices = function(){
+	return tendrilDevices.index();
 }

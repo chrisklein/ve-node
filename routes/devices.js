@@ -7,3 +7,7 @@ exports.index = function(req, res){
 exports.show = function(req, res){
   res.send(devices.getById(req.params.id) || { error: 'Cannot find device' });
 };
+
+exports.tendril = function(req, res){
+	res.send(devices.getTendrilDevices());
+};

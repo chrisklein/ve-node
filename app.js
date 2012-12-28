@@ -34,6 +34,7 @@ app.configure('development', function(){
 app.get('/', routes.index);
 app.get('/devices', devices.index);
 app.get('/devices/:id', devices.show);
+app.get('/tendril',devices.tendril);
 app.get('/users', users.index);
 app.get('/users/:id', users.show);
 app.get('/deviceorigins', deviceOrigins.index);
