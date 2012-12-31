@@ -3,7 +3,7 @@ var users = require('../data/users')
 	, devices = require('./devices')
 	, _ = require('underscore');
 
-exports.index = function(fk){
+exports.index = function(){
 	var obj = users.index();
 	_.each(obj, function(o){
 		o.devices = devices.filterByUserId(o.id);

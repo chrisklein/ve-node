@@ -20,9 +20,21 @@ define([]
 
       var config = ve.config = {
       	"apis": [
-      		{ name: "OURS", implemented: false, servicePath: null },
-      		{ name: "VISIBLE_ENERGY", implemented: true, servicePath: "services/controls/visibleEnergy" },
-      		{ name: "SMART_THINGS", implemented: false, servicePath: "services/controls/smartThings" }
+      		{ 
+                    name: "OURS", 
+                    implemented: false, 
+                    servicePath: null, 
+                  },
+      		{ 
+                    name: "VISIBLE_ENERGY", 
+                    implemented: true, 
+                    servicePath: "services/controls/visibleEnergy" 
+                  },
+      		{ 
+                    name: "SMART_THINGS", 
+                    implemented: false, 
+                    servicePath: "services/controls/smartThings" 
+                  }
       	]
       }
 

@@ -1,27 +1,27 @@
 var devices = [
 	{
 		id: 1,
-		name: "Coffee Machine",
+		name: "Office Kitchen",
 		status: "ON",
-		pin: "100",
+		pin: "1284641197",
 		userId: 11,
 		deviceOriginId: 2
 	},
 	{
 		id: 2,
-		name: "Refrigerator",
+		name: "Andrew's Smart Plug",
 		status: "ON",
-		pin: "100",
-		userId: 11,
-		deviceOriginId: 2
+		pin: "804f58aaaaaa0358",
+		userId: 22,
+		deviceOriginId: 4
 	},
 	{
 		id: 3,
 		name: "Microwave",
 		status: "OFF",
-		pin: "100",
+		pin: "switch1",
 		userId: 11,
-		deviceOriginId: 2
+		deviceOriginId: 3
 	}
 
 ]

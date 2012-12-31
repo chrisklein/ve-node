@@ -13,6 +13,11 @@ var deviceOrigins = [
 		id: 3,
 		vendor: "SMART_THINGS",
 		type: "SWITCH"
+	},
+	{
+		id: 4,
+		vendor: "TENDRIL",
+		type: "SWITCH"
 	}
 ]
 
