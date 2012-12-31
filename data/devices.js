@@ -2,15 +2,15 @@ var devices = [
 	{
 		id: 1,
 		name: "Office Kitchen",
-		status: "ON",
-		pin: "1284641197",
+		status: null,
+		pin: "1284641197:0",
 		userId: 11,
 		deviceOriginId: 2
 	},
 	{
 		id: 2,
 		name: "Andrew's Smart Plug",
-		status: "ON",
+		status: null,
 		pin: "804f58aaaaaa0358",
 		userId: 22,
 		deviceOriginId: 4
@@ -18,8 +18,8 @@ var devices = [
 	{
 		id: 3,
 		name: "Microwave",
-		status: "OFF",
-		pin: "switch1",
+		status: null,
+		pin: "switch1:0",
 		userId: 11,
 		deviceOriginId: 3
 	}
@@ -29,5 +29,3 @@ var devices = [
 exports.index = function(){
 	return devices;
 }
-
-//module.exports = index()

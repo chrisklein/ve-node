@@ -7,7 +7,8 @@ var devices = [
 				"title": "Coffee Machine",
 				"type": "device.switch",
 				"description": "Click to switch",
-				"multiple": false
+				"multiple": false,
+				"status": "off"
 			}
 		]
 	},
@@ -19,7 +20,8 @@ var devices = [
 				"title": "Refrigerator",
 				"type": "device.switch",
 				"description": "Click to switch",
-				"multiple": false
+				"multiple": false,
+				"status": "on"
 			}
 		]
 	},
@@ -31,7 +33,8 @@ var devices = [
 				"title": "Microwave",
 				"type": "device.switch",
 				"description": "Click to switch",
-				"multiple": false
+				"multiple": false,
+				"status": "on"
 			}
 		]
 	}
