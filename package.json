@@ -6,10 +6,12 @@
     "start": "node app"
   },
   "dependencies": {
+    "request": "*",
     "express": "3.0.4",
     "underscore": "*",
     "ejs": "*",
-    "less-middleware": "*"
+    "less-middleware": "*",
+    "jsdom": "*"
   },
   "engines": {
     "node": "0.8.x",
