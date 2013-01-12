@@ -1,0 +1,52 @@
+<html>
+
+  <body>
+
+    <div class="container">
+
+      <div>
+        <ul id="server"></ul>
+      </div>
+
+      <div id="person-json" data-person="<%= json %>"></div>
+
+   	</div> <!-- /container -->
+
+    <script src="/javascripts/lib/jquery1.8.3/jquery-1.8.3.min.js"></script>
+    <script src="/javascripts/lib/underscore1.4.3/underscore-min.js"></script>
+    <script src="/javascripts/lib/backbone0.9.9/backbone-min.js"></script>
+
+    <script type="text/javascript">
+
+    var Person = Backbone.Model.extend();
+
+    var People = Backbone.Collection.extend({
+      url: "/api/person",
+      model: Person
+    });
+
+    var View = Backbone.View.extend({
+      el: "#server",
+      initialize: function(options){
+        options.c.on("reset", this.render, this);
+        this.c = options.c;
+      },
+      render: function(){
+        var _this = this;
+        _this.c.each(function(p){
+          var template = "<li>"+p.get("fullName")+"</li><li>"+p.get("email")+"</li>";
+          _this.$el.append(template);
+        })
+      }
+    })
+
+    var persons = $("#person-json").data('person');
+    var people = new People();
+    var view = new View({c:people});
+
+    people.reset(persons);
+
+    </script>
+
+  </body>
+</html>

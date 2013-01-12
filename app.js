@@ -44,6 +44,9 @@ app.get('/deviceorigins', deviceOrigins.index);
 app.get('/deviceorigins/:id', deviceOrigins.show);
 app.get('/api/person', api.index);
 app.get('/api/person/:id', api.person);
+app.get('/api/server', api.server);
+app.get('/api/client', api.client);
+app.get('/api/api', api.client);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log("Express server listening on port " + app.get('port'));
