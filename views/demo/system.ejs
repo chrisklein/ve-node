@@ -78,7 +78,7 @@
     <script src="/javascripts/lib/bootstrap2.2.2/bootstrap.min.js"></script>
 
     <script>
-      var socket = io.connect('http://localhost/device');
+      var socket = io.connect('http://h2lo-proto.herokuapp.com/device');
       socket.on('zone', function (zone) {
         console.log(zone);
         var $status = $("#zone-status-"+zone.id);
