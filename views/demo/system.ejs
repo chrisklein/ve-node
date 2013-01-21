@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> 
+<html class="no-js"> <!--<![endif]-->
+  <% include ../layout/head.ejs %>
+
+  <body>
+    <% include ../layout/chromeframe.ejs %>
+
+    <% include ../layout/nav.ejs %>
+
+    <div class="container">
+
+      <div id="messages"></div>
+
+     <div id="system-status-container">
+      <span class="lead">System Status: </span>
+      <span id="system-status" class="lead text-success">ON</span>
+     </div>
+
+      <hr>
+
+      <div class="row">
+        
+        <div class="span4">
+          <span class="lead">Zone 1: </span>
+          <span id="zone-status-1" class="lead text-error">OFF</span>
+        </div>
+
+        <div class="span4">
+          <span class="lead">Zone 2: </span>
+          <span id="zone-status-2" class="lead text-error">OFF</span>
+        </div>
+
+        <div class="span4">
+          <span class="lead">Zone 3: </span>
+          <span id="zone-status-3" class="lead text-error">OFF</span>
+        </div>
+
+        <div class="span4">
+          <span class="lead">Zone 4: </span>
+          <span id="zone-status-4" class="lead text-error">OFF</span>
+        </div>
+
+        <div class="span4">
+          <span class="lead">Zone 5: </span>
+          <span id="zone-status-5" class="lead text-error">OFF</span>
+        </div>
+
+        <div class="span4">
+          <span class="lead">Zone 6: </span>
+          <span id="zone-status-6" class="lead text-error">OFF</span>
+        </div>
+
+        <div class="span4">
+          <span class="lead">Zone 7: </span>
+          <span id="zone-status-7" class="lead text-error">OFF</span>
+        </div>
+
+        <div class="span4">
+          <span class="lead">Zone 8: </span>
+          <span id="zone-status-8" class="lead text-error">OFF</span>
+        </div>
+
+
+      </div>
+    	
+      <% include ../layout/footer.ejs %>
+
+   	</div> <!-- /container -->
+
+    <script src="/javascripts/lib/jquery1.8.3/jquery-1.8.3.min.js"></script>
+    <script src="/javascripts/lib/underscore1.4.3/underscore-min.js"></script>
+    <script src="/javascripts/lib/backbone0.9.9/backbone-min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/javascripts/lib/bootstrap2.2.2/bootstrap.min.js"></script>
+
+    <script>
+      var socket = io.connect('http://localhost/device');
+      socket.on('zone', function (zone) {
+        console.log(zone);
+        var $status = $("#zone-status-"+zone.id);
+        if(zone.status == "ON"){
+          $status.text("ON").removeClass("text-error").addClass("text-success")
+          zone.status = "OFF";
+          socket.emit('zone/status', zone);
+        }else if (zone.status == "OFF"){
+          $status.text("OFF").removeClass("text-success").addClass("text-error");
+          zone.status = "ON";
+          socket.emit('zone/status', zone);
+        }
+      });
+    </script>
+
+  </body>
+</html>

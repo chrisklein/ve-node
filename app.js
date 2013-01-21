@@ -5,6 +5,7 @@
 
 var express = require('express')
   , request = require('request')
+  , io = require('socket.io')
   , _ = require('underscore')
   , jsdom = require('jsdom')
   , routes = require('./routes')
@@ -12,8 +13,12 @@ var express = require('express')
   , users = require('./routes/users')
   , deviceOrigins = require('./routes/device_origin')
   , api = require('./routes/api')
+  , demo = require('./routes/demo')
   , http = require('http')
-  , path = require('path');
+  , server
+  , path = require('path')
+  , mqttClient = require('./mqtt/client')
+  , deviceSocket = require('./socket/deviceSocket');
 
 var app = express();
 
@@ -47,7 +52,19 @@ app.get('/api/person/:id', api.person);
 app.get('/api/server', api.server);
 app.get('/api/client', api.client);
 app.get('/api/api', api.client);
+app.get('/demo', demo.system);
 
-http.createServer(app).listen(app.get('port'), function(){
+// Instantiate the server
+server = http.createServer(app)
+
+// Attach socket.io
+io = io.listen(server);
+
+server.listen(app.get('port'), function(){
   console.log("Express server listening on port " + app.get('port'));
 });
+
+deviceSocket.set(io);
+
+// Initialize MQTT client
+mqttClient.init()
