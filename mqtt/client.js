@@ -5,7 +5,7 @@ var mqtt = require('mqttjs')
 // Module
 exports.init = function(){
 
-  mqtt.createClient(1883, "broker.mqttdashboard.com", function(err, client) {
+  mqtt.createClient(1883, "m2m.eclipse.org", function(err, client) {
 
     if (err) {
       console.log("ERROR:" + err);
